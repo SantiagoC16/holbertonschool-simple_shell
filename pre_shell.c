@@ -1,20 +1,20 @@
 #include <stdio.h>
 /**
  * main - is the main
- * @ac: argc
- * @av: argv
- *
+ * @argc: argument counter 
+ * @argv: argument vector
+ * 
  * Return: 0
  */
-int main(int ac, char **av)
+int acav(int argc, char **argv)
 {
 	int i = 0;
 
-	while (av[i] != NULL)
+	
+	for (int i = 0; i < argc; i++) 
 	{
-		i++;
+        printf("%s\n", argv[i]);
 	}
 	return (0);
 }
-
 
