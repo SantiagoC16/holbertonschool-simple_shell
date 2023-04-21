@@ -2,23 +2,44 @@
 
 int main(void)
 {
+
+}
+
+char *get_line(void)
+{
     char *line;
     size_t lenght;
-    int lines = 0;
-    char **token;
-
+    int getlines = 0;
+    
     while (1)
     {
         printf("$ ");
-        lines = getline(&line, &lenght, stdin);
-        token = strtok(line, " ");
+        getlines = getline(&line, &lenght, stdin);
 
-        if (lines == -1)
+        if (getlines == -1)
         {
             break;
         }
         printf("%s", line);
     }
-
-    return (lines);
+    return (line);
 }
+
+char **str_tok(char *line)
+{
+        char **tok = NULL;
+        int i = 0;
+        char *line_copy = malloc(sizeof(char) * strlen(line));
+        strcpy(line_copy, line);
+
+        line_copy = strtok(line, " ");
+
+        while (tok[i] != NULL)
+        {
+            i++;
+            tok = strtok(NULL, " ");
+        }
+        return (tok);
+}
+
+execve;
