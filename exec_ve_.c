@@ -14,5 +14,10 @@ int exec_ve(void)
 
 /*
  * execve(path, argv ,environ)
- * exexplo argv: argv[] = {"/bin/ls", "-l", NULL}
-*/
+ * exemplo argv: argv[] = {"/bin/ls", "-l", NULL}
+ * int val = execve(argv[0](<-path), argv, NULL)
+ *
+ * pid, ppid, fork, wait
+ *
+ * /
+
