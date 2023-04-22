@@ -1,9 +1,10 @@
 #include "main.h"
 
-int main(void)
-{
-
-}
+/**
+ * get_line - pop up a prompt for the user to write
+ *
+ * Return: the line the user write
+ */
 
 char *get_line(void)
 {
@@ -23,34 +24,4 @@ char *get_line(void)
 	}
 	return (line);
 }
-
-char **str_tok(char *line)
-{
-	char **tok = NULL;
-	int i = 0;
-	char *line_copy;
-	int max_tokens;
-	char *token;
-
-	line_copy = malloc(sizeof(char) * strlen(line));
-	if (line_copy == NULL)
-	{
-		return (-1);
-	}
-	strcpy(line_copy, line);
-	tok = malloc(sizeof(char *) tok = malloc(sizeof(char *) * max_tokens);
-	{
-		return (-1);
-	}
-
-	line_copy = strtok(line, " ");
-
-	while (tok[i] != NULL)
-	{
-		i++;
-		tok = strtok(NULL, " ");
-	}
-	return (tok);
-}
-
-execv
+/* checkear lo de eof/ ctrl+d */

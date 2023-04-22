@@ -9,6 +9,9 @@
 #include <stddef.h>
 #include <sys/stat.h>
 
+int main(void);
+char **str_tok(char *line);
+char *get_line(void);
 
 
 #endif
