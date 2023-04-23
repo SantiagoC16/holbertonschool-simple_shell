@@ -13,6 +13,14 @@ int exec_ve(void)
 
 
 /**
+ * argc - argv
+ *
+ * argc - will be the number of token that we will get from strtokr
+ * argv - will be the tokens and its content
+ *
+ * int acav(int token, char **tok)
+ *
+ * ________________
  * execve(path, argv ,environ)
  * exemplo argv: argv[] = {"/bin/ls", "-l", NULL}
  * int val = execve(argv[0](<-path), argv, NULL)

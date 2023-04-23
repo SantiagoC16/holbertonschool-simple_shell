@@ -18,10 +18,10 @@ char *get_line(void)
 		getlines = getline(&line, &lenght, stdin);
 		if (getlines == -1)
 		{
-			break;
+			break; /*cambiar funcion return char xq return tiene q ser -1*/
 		}
-		printf("%s", line);
+		printf("%s", line); /*casi seguro no es necesario*/
 	}
 	return (line);
 }
-/* checkear lo de eof/ ctrl+d */
+/* checkear lo de eof/ ctrl+d */ /*no me acuerdo cuando puse esto xD*/
