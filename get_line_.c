@@ -8,7 +8,7 @@
 
 char *get_line(void)
 {
-	char *line;
+	char *line = NULL;
 	size_t lenght;
 	int getlines = 0;
 
