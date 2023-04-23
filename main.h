@@ -8,6 +8,8 @@
 #include <unistd.h>
 #include <stddef.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 int main(void);
 char **str_tok(char *line);

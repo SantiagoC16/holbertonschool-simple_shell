@@ -14,7 +14,7 @@ char *get_line(void)
 
 	while (1)
 	{
-		printf("$ ");
+		printf("Type_B: ");
 		getlines = getline(&line, &lenght, stdin);
 		if (getlines == -1)
 		{
