@@ -25,7 +25,17 @@ int exec_ve(void)
  * exemplo argv: argv[] = {"/bin/ls", "-l", NULL}
  * int val = execve(argv[0](<-path), argv, NULL)
  *
- *
+ * execve(tok[0], tok ,environ)
+ * exemplo argv: argv[] = {"/bin/ls", "-l", NULL}
+ * int val = execve(argv[0](<-path), argv, NULL)
+ * 
+ * int i = 0;
+ * for (; environ[i]; i++)
+ * printf("%s", environ[i]);
+ * 
+ * 
+ * 
+ * 
  * pid_t pid;
  * pid = getpid();
  * _________________

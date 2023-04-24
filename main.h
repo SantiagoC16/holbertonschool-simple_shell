@@ -11,9 +11,13 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+
 int main(void);
 char **str_tok(char *line);
-char *get_line(void);
+int *get_line(char **line);
+extern char **environ;
+char *_strncpy(char *dest, char *src, int n);
+char *_getenv(const char *fath);
 
 
 #endif
