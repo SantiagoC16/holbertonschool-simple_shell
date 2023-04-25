@@ -27,14 +27,14 @@ char *_strncpy(char *dest, char *src, int n)
  * Return: 0
  */
 
-char *_getenv(const char *fath) 
+char *_getenv(const char *phat) 
 {
-    int i;
-    char *envi;
+    int i = 0;
+    char *envi = NULL;
 
     for (i = 0; environ[i] != NULL; i++)
     {
-        if (strstr(environ[i], fath))
+        if (strstr(environ[i], phat))
         {
             envi = environ[i];
             envi = _strncpy(envi, envi, 5);
