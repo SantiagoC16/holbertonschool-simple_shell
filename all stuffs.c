@@ -52,20 +52,26 @@ char *_getenv(const char *fath)
 
 int *get_line(char **line)
 {
-	char *line = NULL;
+	char *str = NULL;
 	size_t lenght = 0;
-	int getlines = 0;
+	int getline_result = 0;
 
 	while (1)
 	{
 		printf("Type_Bitch: ");
-		getlines = getline(&line, &lenght, stdin);
-		if (getlines == -1)
+		getline_result = getline(&str, &lenght, stdin);
+		if (getline_result == -1)
 		{
+			free (str);
 			return (-1);
 		}
+		else
+		{
+			*line = str;
+			return &getline_result;
+		}
 	}
-	return (lenght);
+	return (&getline_result);
 }
 
 /**
@@ -77,27 +83,44 @@ int *get_line(char **line)
 char **str_tok(char *line)
 {
 	char **tok = NULL;
-	char *line_copy;
-	char *token;
-	char *delim = " \n\t";
+	char *line_copy, *token, *delim = " \n\t";
+	int ntokens = 0, i = 0, l = 0;
 	
-	line_copy = malloc(sizeof(char) * strlen(line));
-	if (line_copy == NULL)
-	{
-		stderr;
-		free(line_copy);
-	}
 	line_copy = strdup(line); 
-	token = strtok(line_copy, delim);
-	while (token != NULL)
-	{
-		token = strtok(NULL, delim);
-	}
-	tok = malloc(sizeof(char *) * strlen(token));
-	if (tok == NULL)
+	if (line_copy == NULL)
 	{
 		return (NULL);
 	}
+	token = strtok(line_copy, delim);
+	while (token != NULL)
+	{
+		ntokens++;
+		token = strtok(NULL, delim);
+	}
+	tok = malloc(sizeof(char *) * (ntokens + 1));
+	if (tok == NULL)
+	{
+		free(line_copy);
+		return (NULL);
+	}
+	token = strtok(line_copy, delim);
+	for (i = 0; i < ntokens; i++)
+	{
+		tok[i] = strdup(token);
+        if (tok[i] == NULL)
+		{
+			for (l = 0; l < i; l++)
+			{
+				free(tok[l]);
+			}
+			free(tok);
+        	free(line_copy);
+        	return NULL;
+		}
+		token = strtok(NULL, delim);
+	}
+	tok[ntokens] = NULL;
+    free(line_copy);
 	return (tok);
 }
 
