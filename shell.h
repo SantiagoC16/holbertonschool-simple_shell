@@ -17,7 +17,8 @@ char **str_tok(char *line);
 int *get_line(char **line);
 extern char **environ;
 char *_strncpy(char *dest, char *src, int n);
+char *_strdup(char *str);
 char *_getenv(const char *fath);
-
+char *_which(const char *name);
 
 #endif
