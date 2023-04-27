@@ -1,13 +1,33 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * exec_ve - a
+ * 
  * Return: b
  */
 
 int exec_ve(void)
 {
+	pid_t hijo;
+	int statu = 0;
+
+	hijo = fork();
+
+	if (hijo < 0)
+	{
+		perror("ta muerto");
+	}
+	else if (hijo == 0)
+	{
+		execve();
+		return 0;
+	}
+	else
+	{
+		waitpid(hijo, )
+	}
 	return (0);
+	
 }
 
 
@@ -32,35 +52,4 @@ int exec_ve(void)
  * int i = 0;
  * for (; environ[i]; i++)
  * printf("%s", environ[i]);
- * 
- * 
- * 
- * 
- * pid_t pid;
- * pid = getpid();
- * _________________
- * pid_t ppid;
- * ppid = getppid();
- * _________________
- * fork()
- * return:
- * - pid of child in the parent
- * - 0 in the child
- * - -1 if unsuccessful
- *
- * int main(void)
- * {
- *	pid_t pid;
- *
- *	pid = fork();
- *	if (pid == -1)
- *		perror;
- *	else
- *		return 0;
- * }
- *__________________
- * wait
- * is in for the ppid
- * wait(something);
- *
  */
