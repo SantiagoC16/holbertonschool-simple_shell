@@ -47,3 +47,22 @@ char **tokenizer(char *line)
     free(line_copy);
 	return (tok); 
 }
+
+/**
+ * main - main
+ * Return: no
+ */
+
+int main(void)
+{
+	char **tokens;
+	char input[] = "I hate You Shell!";
+	
+	tokens = tokenizer(input);
+
+	printf("%s\n", tokens[0]);
+	printf("%s\n", tokens[1]); 
+    printf("%s\n", tokens[2]); 
+    printf("%s\n", tokens[3]); 
+	return (0);
+}
