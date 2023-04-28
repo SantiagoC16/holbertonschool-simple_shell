@@ -1,15 +1,16 @@
-#include "shell.h"
 
+#include "shell.h"
 /**
  * exec_ve - a
  * @argv: pointer to pointer
  * Return: b
  */
 
-int exec_ve(char **argv)
+int exec_ve(char *argc, char **argv)
 {
+
 	pid_t hijo;
-	int statu = 0;
+	int status = 0;
 
 	hijo = fork();
 
@@ -19,11 +20,11 @@ int exec_ve(char **argv)
 	}
 	else if (hijo == 0)
 	{
-		execve(argv[0], argv, environ);
+		execve(argc, argv, environ);
 	}
 	else
 	{
-		waitpid(hijo, &statu, 0);
+		waitpid(hijo, &status, 0);
 	}
-	return (statu);
+	return (status);
 }

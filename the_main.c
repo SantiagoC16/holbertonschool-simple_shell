@@ -6,7 +6,7 @@
  * Return: idk yet
  */
 
-/*int main(void)
+int main(void)
 {
     int getline_result = 0;
     size_t length = 0;
@@ -21,11 +21,11 @@
 			free (str);
 			exit(1);
 		}
-        arr_cmd = tokenizer(str);
-        path = _which(arr_cmd[0]);
+        arr_cmd = tokenizer(str);  
+        path = _which((const char **) arr_cmd);
         if (path != NULL)
         {
-            exec_ve(arr_cmd);
+            exec_ve(str, arr_cmd);
         }
         else
         {

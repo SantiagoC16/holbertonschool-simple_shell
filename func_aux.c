@@ -39,22 +39,24 @@ char *_strdup(char *str)
 }
 
 /**
- * _strncpy - copy char's 
- * @dest: to use on getenv
- * @src: to use on getenv 
- * @n:int
- * Return: 0
+ * strfrmncpy - copies a string from n
+ * @src: pointer to the string
+ * @dest: destination
+ * @n: an integer
+ *
+ * Return: returns copied string
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *strfrmncpy(char *dest, char *src, int n)
 {
-    int i, j = 0;
-    
-    for (i = n; src[i] != '\0'; i++)
-    {
-        dest[j] = src[i];
-        j++;
-    }
-    dest[j] = '\0';
-    return (dest);
+	int comp = 0;
+    int count = 0;
+
+	for (comp = n; src[comp] != '\0'; comp++)
+	{
+		dest[count] = src[comp];
+        count++;
+	}
+    dest[count] = '\0';
+	return (dest);
 }
