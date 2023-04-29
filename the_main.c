@@ -23,7 +23,7 @@ int main(void)
 		}
         arr_cmd = tokenizer(str);  
         fpath = _which((const char **) arr_cmd);
-        if (path != NULL)
+        if (fpath != NULL)
         {
             exec_ve(str, arr_cmd);
         }
