@@ -34,6 +34,7 @@ int main(void)
         
         free(arr_cmd);
         free(path);
+        free(str);
     }
     return (0);
 } 

@@ -35,7 +35,6 @@ char **tokenizer(char *line)
 		if (tok[cont1] == NULL)
 		{
 			free(tok);
-			free(line_copy);
 			return (NULL);
 		}
 		strcpy(tok[cont1], token2);

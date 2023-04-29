@@ -44,13 +44,11 @@ char *_which(const char **argv)
         strcat(path, argv[0]);
         if (stat(path, &del_hijo) == 0)
         {
-            free(fath);
-            free(fath_copy);
             return (path);
+            free(path);
         }
         free(path);
         fath_copy = strtok(NULL, ":");
     }
-    free(fath);
     return (NULL);
 }
