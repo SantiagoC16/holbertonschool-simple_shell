@@ -10,7 +10,7 @@ int main(void)
 {
     int getline_result = 0;
     size_t length = 0;
-    char *str = NULL, **arr_cmd = NULL, *path = NULL;
+    char *str = NULL, **arr_cmd = NULL, *fpath = NULL;
 
     while (1)
     {
@@ -22,7 +22,7 @@ int main(void)
 			exit(1);
 		}
         arr_cmd = tokenizer(str);  
-        path = _which((const char **) arr_cmd);
+        fpath = _which((const char **) arr_cmd);
         if (path != NULL)
         {
             exec_ve(str, arr_cmd);
@@ -33,7 +33,7 @@ int main(void)
         }
         
         free(arr_cmd);
-        free(path);
+        free(fpath);
         free(str);
     }
     return (0);
