@@ -26,7 +26,7 @@ int main(void)
 		if (strcmp(str, "exit\n") == 0)
 		{
 			free(str);
-			exit(1);
+			exit(0);
 		}
 		arr_cmd = tokenizer(str);
 		if (arr_cmd)
