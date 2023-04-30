@@ -30,22 +30,24 @@ char *_getenv(const char *fath)
 
 char *_which(char *p, char **argv)
 {
-    char *path, *token_path, *cmd_path;
+    char *path = NULL, *token_path = NULL, *cmd_path = NULL;
 
     path = strdup(p);
     if (path == NULL)
-        free(path);
-        return (NULL);
-
-    token_path = strtok(path, "=:");
-    cmd_path = malloc(sizeof(char) * strlen(token_path) + strlen(argv[0]) + 2);
-    if (cmd_path == NULL)
     {
-        free(path);
+        perror("strdup failed");
         return (NULL);
     }
+    token_path = strtok(path, "=:");
     while (token_path != NULL)
     {
+        cmd_path = malloc(sizeof(char) * strlen(token_path) + strlen(argv[0]) + 2);
+        if (cmd_path == NULL)
+        {
+            perror("malloc failed");
+            free(path);
+            return (NULL);
+        }
         strcpy(cmd_path, token_path);
         strcat(cmd_path, "/");
         strcat(cmd_path, argv[0]);

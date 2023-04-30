@@ -13,14 +13,17 @@ int exec_ve(char *argc, char **argv)
 	int status = 0;
 
 	hijo = fork();
-
 	if (hijo < 0)
 	{
-		perror("ta muerto");
+		perror("fork failed");
 	}
 	else if (hijo == 0)
 	{
-		execve(argc, argv, environ);
+		if (execve(argc, argv, environ) == -1)
+		{
+			perror("execve failed");
+            exit(1);
+		}
 	}
 	else
 	{
