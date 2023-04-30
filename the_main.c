@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int getline_result = 0, shell = isatty(STDIN_FILENO);
+	int getline_result = 0, shell = isatty(STDIN_FILENO), cont = 0;
 	size_t length = 0;
 	char *str = NULL, **arr_cmd = NULL, *fpath = NULL, *path = NULL;
 
@@ -41,9 +41,12 @@ int main(void)
 		{
 			perror("command not found");
 		}
+		for (cont = 0; arr_cmd[cont] != NULL; cont++) 
+		{
+			free(arr_cmd[cont]);
+		}
 		free(arr_cmd);
 		free(fpath);
-		free(str);
 	}
 	return (0);
 }

@@ -63,6 +63,7 @@ char *_which(char *p, char **argv)
 			free(st);
 			return (cmd_path);
 		}
+		free(cmd_path);
 		cmd_path = NULL;
 		token_path = strtok(NULL, ":");
 	}
