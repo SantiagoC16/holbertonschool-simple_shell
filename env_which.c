@@ -40,12 +40,6 @@ char *_which(char *p, char **argv)
 	if (path == NULL)
 		return (NULL);
 	token_path = strtok(path, ":");
-	if (stat(argv[0], st) == 0)
-	{
-		free(path);
-		free(st);
-		return (argv[0]);
-	}
 	while (token_path != NULL)
 	{
 		cmd_path = malloc(sizeof(char) * strlen(token_path) + strlen(argv[0]) + 2);
@@ -71,5 +65,5 @@ char *_which(char *p, char **argv)
 	free(cmd_path);
 	free(token_path);
 	free(st);
-	return (NULL);
+	return (argv[0]);
 }

@@ -19,7 +19,7 @@ char *strfrmncpy(char *dest, char *src, int n);
 char *_strdup(char *str);
 char *_getenv(const char *fath);
 char *_which(char *p, char **argv);
-int exec_ve(char *argc, char **argv);
+int exec_ve(char **argv);
 char *_strcat(char *dest, char *src);
 
 #endif

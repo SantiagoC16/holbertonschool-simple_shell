@@ -7,11 +7,12 @@
  * Return: b
  */
 
-int exec_ve(char *argc, char **argv)
+int exec_ve(char **argv)
 {
 
 	pid_t hijo;
 	int status = 0;
+	char *path = NULL, *genv = NULL;
 
 	hijo = fork();
 	if (hijo < 0)
@@ -20,7 +21,9 @@ int exec_ve(char *argc, char **argv)
 	}
 	else if (hijo == 0)
 	{
-		if (execve(argc, argv, environ) == -1)
+		genv = _getenv("PATH");
+		path = _which(genv, argv);
+		if (execve(path, argv, environ) == -1)
 		{
 			perror("execve failed");
 			exit(1);
