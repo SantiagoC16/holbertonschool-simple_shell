@@ -24,7 +24,6 @@ int main(void)
 			free(str);
 			exit(1);
 		}
-		printf("\n");
 		arr_cmd = tokenizer(str);
 		path = _getenv("PATH");
 		if (path == NULL)
