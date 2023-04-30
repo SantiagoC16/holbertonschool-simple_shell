@@ -35,7 +35,6 @@ int main(void)
 		if (fpath != NULL)
 		{
 			exec_ve(fpath, arr_cmd);
-			exit(0);
 		}
 		else
 		{
@@ -47,6 +46,7 @@ int main(void)
 		}
 		free(arr_cmd);
 		free(fpath);
+		exit(0);
 	}
 	return (0);
 }
