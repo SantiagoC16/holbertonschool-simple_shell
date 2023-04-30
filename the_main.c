@@ -17,6 +17,7 @@ int main(void)
 		if (shell == 1)
 			printf("Type_Bitch: ");
 		getline_result = getline(&str, &length, stdin);
+		fflush(stdin);
 		if (getline_result == -1)
 		{
 			free(str);
@@ -27,7 +28,7 @@ int main(void)
 			exec_ve(arr_cmd);
 		else
 			perror("command not found");
-		for (cont = 0; arr_cmd[cont] != NULL; cont++) 
+		for (cont = 0; arr_cmd[cont] != NULL; cont++)
 			free(arr_cmd[cont]);
 		free(arr_cmd);
 		free(str);
