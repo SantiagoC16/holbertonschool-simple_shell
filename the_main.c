@@ -47,5 +47,5 @@ int main(void)
 		free(arr_cmd);
 		free(fpath);
 	}
-	return (1);
+	return (0);
 }
