@@ -19,7 +19,7 @@ extern char **environ;
 char *strfrmncpy(char *dest, char *src, int n);
 char *_strdup(char *str);
 char *_getenv(const char *fath);
-char *_which(char **argv);
+char *_which(char *p, char **argv);
 int exec_ve(char *argc, char **argv);
 
 

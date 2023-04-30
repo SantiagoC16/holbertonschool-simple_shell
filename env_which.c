@@ -28,16 +28,13 @@ char *_getenv(const char *fath)
  * Return: 0
  */
 
-char *_which(char **argv)
+char *_which(char *p, char **argv)
 {
-    char *fath, *path, *token_path, *cmd_path;
+    char *path, *token_path, *cmd_path;
 
-    fath = _getenv("PATH");
-    if (fath == NULL)
-        return (NULL);
-
-    path = strdup(fath);
+    path = strdup(p);
     if (path == NULL)
+        free(path);
         return (NULL);
 
     token_path = strtok(path, "=:");
@@ -49,7 +46,6 @@ char *_which(char **argv)
     }
     while (token_path != NULL)
     {
-        
         strcpy(cmd_path, token_path);
         strcat(cmd_path, "/");
         strcat(cmd_path, argv[0]);
