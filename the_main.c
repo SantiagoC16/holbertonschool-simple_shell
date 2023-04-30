@@ -35,13 +35,12 @@ int main(void)
         fpath = _which(path, arr_cmd);
         if (fpath != NULL)
         {
-            exec_ve(str, arr_cmd);
+            exec_ve(fpath, arr_cmd);
         }
         else
         {
             perror("command not found");
         }
-
         free(arr_cmd);
         free(fpath);
         free(str);

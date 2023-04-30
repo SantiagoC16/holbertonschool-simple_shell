@@ -11,31 +11,31 @@
 
 char *_strdup(char *str)
 {
-    char *p;
-    int cont;
-    int copy;
+	char *p;
+	int cont;
+	int copy;
 
-    if (str == NULL)
-    {
-	    return (NULL);
-    }
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 
-    else
-    {
-	    for (cont = 0; str[cont]; cont++)
-	    {
-        }
-        p = malloc(sizeof(char) * cont + 1);
-	    if (p == NULL)
-	    {
-	    	return (NULL);
-	    }
-	    for (copy = 0; copy <= cont; copy++)
-	    {
-	        p[copy] = str[copy];
-	    }
-    return (p);
-    }
+	else
+	{
+		for (cont = 0; str[cont]; cont++)
+		{
+		}
+		p = malloc(sizeof(char) * cont + 1);
+		if (p == NULL)
+		{
+			return (NULL);
+		}
+		for (copy = 0; copy <= cont; copy++)
+		{
+			p[copy] = str[copy];
+		}
+		return (p);
+	}
 }
 
 /**
@@ -50,13 +50,36 @@ char *_strdup(char *str)
 char *strfrmncpy(char *dest, char *src, int n)
 {
 	int comp = 0;
-    int count = 0;
+	int count = 0;
 
 	for (comp = n; src[comp] != '\0'; comp++)
 	{
 		dest[count] = src[comp];
-        count++;
+		count++;
 	}
-    dest[count] = '\0';
+	dest[count] = '\0';
+	return (dest);
+}
+
+/**
+ * _strcat - Write a function that concatenates two strings
+ * @dest: is a pointer.
+ * @src: is a pointer.
+ * Return: always
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int a, b;
+
+	for (a = 0; dest[a] != '\0'; a++)
+	{
+		;
+	}
+	for (b = 0; src[b] != '\0'; b++)
+	{
+		dest[a + b] = src[b];
+	}
+	dest[a + b] = '\0';
 	return (dest);
 }
