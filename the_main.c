@@ -35,6 +35,7 @@ int main(void)
 		if (fpath != NULL)
 		{
 			exec_ve(fpath, arr_cmd);
+			exit(0);
 		}
 		else
 		{
