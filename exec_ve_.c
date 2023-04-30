@@ -3,6 +3,7 @@
 /**
  * exec_ve - a
  * @argv: pointer to pointer
+ * @argc: argument counter
  * Return: b
  */
 

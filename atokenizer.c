@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * str_tok - tokenize
+ * tokenizer - tokenize
  * @line: is the input of the user
  * Return: the array of tokens
  */
@@ -14,10 +14,7 @@ char **tokenizer(char *line)
 
 	line_copy = strdup(line);
 	if (line_copy == NULL)
-	{
-		perror("strdup failed");
 		return (NULL);
-	}
 	token = strtok(line_copy, delim);
 	while (token != NULL)
 	{
@@ -28,7 +25,6 @@ char **tokenizer(char *line)
 	tok = malloc(sizeof(char *) * ntokens);
 	if (tok == NULL)
 	{
-		perror("malloc failed");
 		free(line_copy);
 		return (NULL);
 	}
@@ -38,7 +34,6 @@ char **tokenizer(char *line)
 		tok[cont1] = malloc(sizeof(char) * (strlen(token2) + 1));
 		if (tok[cont1] == NULL)
 		{
-			perror("malloc failed");
 			free(tok);
 			free(line_copy);
 			return (NULL);
