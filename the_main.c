@@ -21,7 +21,7 @@ int main(void)
 		if (getline_result == -1)
 		{
 			free(str);
-			exit(1);
+			exit(2);
 		}
 		if (strcmp(str, "exit\n") == 0)
 		{
