@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _getenv - get the path 
+ * _getenv - get the path
  * @fath: var to get path
  * Return: 0
  */
 
-char *_getenv(const char *fath) 
+char *_getenv(const char *fath)
 {
     int i = 0;
     char *envitwo = NULL;
@@ -16,14 +16,14 @@ char *_getenv(const char *fath)
         if (strncmp(environ[i], fath, 4) == 0)
         {
             envitwo = environ[i];
-            return(envitwo);
+            return (envitwo);
         }
     }
     return (NULL);
 }
 
 /**
- * _which - get the path 
+ * _which - get the path
  * @name: var to get path
  * Return: 0
  */

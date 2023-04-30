@@ -20,12 +20,12 @@ int main(void)
         }
         getline_result = getline(&str, &length, stdin);
         if (getline_result == -1)
-		{
-			free (str);
-			exit(1);
-		}
+        {
+            free(str);
+            exit(1);
+        }
         printf("\n");
-        arr_cmd = tokenizer(str);  
+        arr_cmd = tokenizer(str);
         path = _getenv("PATH");
         if (path == NULL)
         {
@@ -39,9 +39,9 @@ int main(void)
         }
         else
         {
-            perror("command not found"); 
+            perror("command not found");
         }
-        
+
         free(arr_cmd);
         free(fpath);
         free(str);

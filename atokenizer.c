@@ -11,8 +11,8 @@ char **tokenizer(char *line)
 	char **tok = NULL;
 	char *line_copy, *token = NULL, *delim = " \t", *token2 = NULL;
 	int ntokens = 0, cont1 = 0;
-	
-	line_copy = strdup(line); 
+
+	line_copy = strdup(line);
 	if (line_copy == NULL)
 	{
 		perror("strdup failed");
@@ -22,7 +22,7 @@ char **tokenizer(char *line)
 	while (token != NULL)
 	{
 		ntokens++;
-		token = strtok(NULL, delim); 
+		token = strtok(NULL, delim);
 	}
 	ntokens++;
 	tok = malloc(sizeof(char *) * ntokens);
@@ -33,7 +33,7 @@ char **tokenizer(char *line)
 		return (NULL);
 	}
 	token2 = strtok(line, delim);
-	for (cont1 = 0; cont1 < ntokens -1; cont1++)
+	for (cont1 = 0; cont1 < ntokens - 1; cont1++)
 	{
 		tok[cont1] = malloc(sizeof(char) * (strlen(token2) + 1));
 		if (tok[cont1] == NULL)
@@ -44,9 +44,9 @@ char **tokenizer(char *line)
 			return (NULL);
 		}
 		strcpy(tok[cont1], token2);
-		token2 = strtok(NULL, delim); 
+		token2 = strtok(NULL, delim);
 	}
 	tok[cont1] = NULL;
-    free(line_copy);
-	return (tok); 
+	free(line_copy);
+	return (tok);
 }
