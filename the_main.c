@@ -23,6 +23,11 @@ int main(void)
 			free(str);
 			exit(1);
 		}
+		if (strcmp(str, "exit\n") == 0)
+		{
+			free(str);
+			exit(1);
+		}
 		arr_cmd = tokenizer(str);
 		if (arr_cmd)
 			exec_ve(arr_cmd);
