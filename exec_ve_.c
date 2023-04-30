@@ -14,9 +14,9 @@ int exec_ve(char **argv)
 	char *path = NULL, *genv = NULL;
 
 	hijo = fork();
-	if (hijo < -1)
+	if (hijo == -1)
 	{
-		perror("fork failed");
+		fprintf(stderr, "./hsh: 1: %s: not found", argv[0]);
 		exit(127);
 	}
 	else if (hijo == 0)
