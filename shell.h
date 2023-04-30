@@ -13,10 +13,7 @@
 
 int main(void);
 char **tokenizer(char *line);
-int *get_line(char **line);
 extern char **environ;
-char *strfrmncpy(char *dest, char *src, int n);
-char *_strdup(char *str);
 char *_getenv(const char *fath);
 char *_which(char *p, char **argv);
 int exec_ve(char **argv);

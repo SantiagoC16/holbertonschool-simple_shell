@@ -36,8 +36,6 @@ int main(void)
 		for (cont = 0; arr_cmd[cont] != NULL; cont++)
 			free(arr_cmd[cont]);
 		free(arr_cmd);
-		free(str);
-		exit(EXIT_SUCCESS);
 	}
-	return (0);
+	exit(EXIT_SUCCESS);
 }

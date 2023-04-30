@@ -14,9 +14,10 @@ int exec_ve(char **argv)
 	char *path = NULL, *genv = NULL;
 
 	hijo = fork();
-	if (hijo < 0)
+	if (hijo < -1)
 	{
 		perror("fork failed");
+		exit(127);
 	}
 	else if (hijo == 0)
 	{
