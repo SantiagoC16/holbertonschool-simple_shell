@@ -5,6 +5,7 @@ This project is the last project in our first trimester on Holberton, the objeti
 The shell is a program that acts as an interface between the user and the kernel of an operating system and is in charge of executing commands.
 
 <h1> Usage: </h1>
+
  |      Input     |                Output               |
  | ---------------| ----------------------------------- |
  | $ ls -l        | run ls command in long format       |
