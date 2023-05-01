@@ -4,13 +4,15 @@ This project is the last project in our first trimester on Holberton, the objeti
 
 The shell is a program that acts as an interface between the user and the kernel of an operating system and is in charge of executing commands.
 
-
-| Format to print  |   Description    |
-| ---------------- | ---------------- |
-| %c               | Print a character|
-| %s               | Print a string   |
-| %d, %i           | Print a number   |
-| %%               | Print %          |
+ <div>
+ <summary> <h1> Usage: </h1> </summary>
+ |      Input     |                Output               |
+ | ---------------| ----------------------------------- |
+ | $ ls -l        | run ls command in long format       |
+ | $ pwd          | print the current working directory |
+ | $ echo "SHELL" | print SHELL in standard output      |
+ | $ clear        | clean the interface                 |
+ </div>
 
  <div>
  <details>
@@ -41,17 +43,7 @@ The shell is a program that acts as an interface between the user and the kernel
 
  </details>
  </div>
- <div>
- <details>
- <summary> <h1> Usage: </h1> </summary>
- |      Input     |                Output               |
- | ---------------| ----------------------------------- |
- | $ ls -l        | run ls command in long format       |
- | $ pwd          | print the current working directory |
- | $ echo "SHELL" | print SHELL in standard output      |
- | $ clear        | clean the interface                 |
- </details>
- </div>
+
 
  <div>
  <details>
