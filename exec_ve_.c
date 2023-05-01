@@ -25,8 +25,8 @@ int exec_ve(char **argv)
 		path = _which(genv, argv);
 		if (execve(path, argv, environ) == -1)
 		{
-			fprintf(stderr, "./hsh: 1: %s: not found", argv[0]);
-			exit(2);
+			perror("execve failed");
+			exit(1);
 		}
 	}
 	else
