@@ -65,5 +65,6 @@ char *_which(char *p, char **argv)
 	free(cmd_path);
 	free(token_path);
 	free(st);
+	
 	return (argv[0]);
 }
