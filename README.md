@@ -68,6 +68,6 @@ The shell is a program that acts as an interface between the user and the kernel
  <div>
  <details>
  <summary><h1> Flowchart </h1> </summary>
- ![flowc.jpg](https://github.com/SantiagoC16/holbertonschool-simple_shell/blob/master/flowc.jpg)
+ ![](https://github.com/SantiagoC16/holbertonschool-simple_shell/blob/master/flowc.jpg)
  </details>
  </div>
