@@ -32,12 +32,7 @@ int main(void)
 		if (arr_cmd)
 			exec_ve(arr_cmd);
 		else
-		{
-			fprintf(stderr, "./hsh: 1: %s: not found", arr_cmd[0]);
-			free(arr_cmd);
-			free(str);
-			exit (2);
-		}
+			perror("command not found");
 		for (cont = 0; arr_cmd[cont] != NULL; cont++)
 			free(arr_cmd[cont]);
 		free(arr_cmd);
