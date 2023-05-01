@@ -17,7 +17,7 @@ int exec_ve(char **argv)
 	if (hijo == -1)
 	{
 		fprintf(stderr, "./hsh: 1: %s: not found", argv[0]);
-		exit(2);
+		exit(-1);
 	}
 	else if (hijo == 0)
 	{
